@@ -1,11 +1,24 @@
 class DNA
 
+  NUCLEOTIDES = %w(A T C G)
+
   def initialize(dna)
     @dna = dna
   end
 
   def count(nucleotide)
-    @dna.chars.select{|char|char==nucleotide}.count
+    nucleotide_counts[nucleotide]
+  end
+
+  def nucleotide_counts
+    Hash[*array_of_nucleotides_and_counts]
+  end
+
+  private
+  def array_of_nucleotides_and_counts
+    NUCLEOTIDES.map do |nucleotide|
+      [nucleotide, @dna.chars.count(nucleotide)]
+    end.flatten
   end
 
 end

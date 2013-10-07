@@ -7,7 +7,6 @@ class DNATest < MiniTest::Unit::TestCase
   end
 
   def test_empty_dna_string_has_no_nucleotides
-    skip
     expected = {'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0}
     assert_equal expected, DNA.new('').nucleotide_counts
   end
