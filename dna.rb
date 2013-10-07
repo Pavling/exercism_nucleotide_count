@@ -7,7 +7,7 @@ class DNA
   end
 
   def count(nucleotide)
-    nucleotide_counts[nucleotide]
+    nucleotide_counts[nucleotide].to_i
   end
 
   def nucleotide_counts
