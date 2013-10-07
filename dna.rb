@@ -9,7 +9,7 @@ class DNA
   end
 
   def count(nucleotide)
-    raise ArgumentError unless NUCLEOTIDES.include?(nucleotide)
+    raise ArgumentError unless is_valid_dna_nucleotide?(nucleotide)
     nucleotide_counts[nucleotide].to_i
   end
 
@@ -29,4 +29,8 @@ class DNA
     (@dna.chars.to_a-DNA_NUCLEOTIDES).empty?
   end
 
+  private
+  def is_valid_dna_nucleotide?(nucleotide)
+    NUCLEOTIDES.include?(nucleotide)
+  end
 end
