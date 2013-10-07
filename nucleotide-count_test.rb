@@ -54,14 +54,12 @@ class DNATest < MiniTest::Unit::TestCase
   end
 
   def test_validates_dna
-    skip
     assert_raises ArgumentError do
       DNA.new('John')
     end
   end
 
   def test_counts_all_nucleotides
-    skip
     s = 'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
     dna = DNA.new(s)
     expected = {'A' => 20, 'T' => 21, 'G' => 17, 'C' => 12}
