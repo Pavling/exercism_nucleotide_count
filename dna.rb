@@ -5,6 +5,7 @@ class DNA
 
   def initialize(dna)
     @dna = dna
+    raise ArgumentError unless given_valid_dna?
   end
 
   def count(nucleotide)
@@ -21,6 +22,11 @@ class DNA
     DNA_NUCLEOTIDES.map do |nucleotide|
       [nucleotide, @dna.chars.count(nucleotide)]
     end.flatten
+  end
+
+  private
+  def given_valid_dna?
+    (@dna.chars.to_a-DNA_NUCLEOTIDES).empty?
   end
 
 end

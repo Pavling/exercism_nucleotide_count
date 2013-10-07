@@ -48,7 +48,6 @@ class DNATest < MiniTest::Unit::TestCase
   end
 
   def test_validates_dna_not_rna
-    skip
     assert_raises ArgumentError do
       DNA.new('ACGU')
     end
