@@ -35,7 +35,6 @@ class DNATest < MiniTest::Unit::TestCase
   end
 
   def test_dna_counts_do_not_change_after_counting_uracil
-    skip
     dna = DNA.new('GATTACA')
     dna.count('U')
     expected = {'A' => 3, 'T' => 2, 'C' => 1, 'G' => 1}
@@ -43,7 +42,6 @@ class DNATest < MiniTest::Unit::TestCase
   end
 
   def test_validates_nucleotides
-    skip
     assert_raises ArgumentError do
       DNA.new('GACT').count('X')
     end
